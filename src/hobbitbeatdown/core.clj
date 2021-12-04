@@ -31,4 +31,15 @@
         (recur remaining
                (into final-body-parts
                      (set [part (matching-part part)])))))))
+
+(defn hit
+  [asym-body-parts]
+  (let [sym-parts (symmetrize-body-parts asym-body-parts)
+        body-part-size-sum (reduce + (map :size sym-parts))
+        target (rand body-part-size-sum)]
+    (loop [[part & remaining] sym-parts
+           accumulated-size (:size part)]
+      (if (> accumulated-size target)
+        part
+        (recur remaining (+ accumulated-size (:size (first remaining))))))))
   
