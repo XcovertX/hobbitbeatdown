@@ -1,6 +1,8 @@
 (ns hobbitbeatdown.core
   (:gen-class))
 
+(def filename "creatures.csv")
+
 (defn -main
   [& args])
 
@@ -64,3 +66,5 @@
    {:type "hammer" :damage 4}
    {:type "throwing star" :damage 1}
    {:type "dagger" :damage 2}])
+
+
