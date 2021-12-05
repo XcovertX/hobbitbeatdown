@@ -42,4 +42,15 @@
       (if (> accumulated-size target)
         part
         (recur remaining (+ accumulated-size (:size (first remaining))))))))
-  
+
+(defn addHundo
+  [number]
+  (+ number 100))
+
+(defn dec-maker
+  [numberToDec times]
+  (loop [count 0 number numberToDec]
+    (println (str "Dec " number))
+    (if (> count times)
+      number
+      (recur (inc count) (dec number)))))
