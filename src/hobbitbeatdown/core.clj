@@ -54,3 +54,13 @@
     (if (> count times)
       number
       (recur (inc count) (dec number)))))
+
+(def names ["bilbo" "gandalf" "zeb" "meg" "ruvy"])
+
+(def weapon
+  [{:type "sword" :damage 8}
+   {:type "knife" :damage 7}
+   {:type "club" :damage 3}
+   {:type "hammer" :damage 4}
+   {:type "throwing star" :damage 1}
+   {:type "dagger" :damage 2}])
